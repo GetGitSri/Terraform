@@ -1,0 +1,44 @@
+╵
+PS D:\Cloud\Terraform\Kalyan\terraform_1.1.2_windows_amd64\Demo\hashicorp-certified-terraform-associate\03-Terraform-Fundamental-Blocks\03-02-Provider-Block\terraform-manifests> ..\..\..\..\..\terraform.exe validate
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!! TERRAFORM CRASH !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Terraform crashed! This is always indicative of a bug within Terraform.
+Please report the crash with Terraform[1] so that we can fix this.
+
+When reporting bugs, please include your terraform version, the stack trace
+shown below, and any additional information which may help replicate the issue.
+
+[1]: https://github.com/hashicorp/terraform/issues
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!! TERRAFORM CRASH !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+runtime error: invalid memory address or nil pointer dereference
+goroutine 1 [running]:
+runtime/debug.Stack()
+        /usr/local/go/src/runtime/debug/stack.go:24 +0x65
+runtime/debug.PrintStack()
+        /usr/local/go/src/runtime/debug/stack.go:16 +0x19
+github.com/hashicorp/terraform/internal/logging.PanicHandler()
+        /home/circleci/project/project/internal/logging/panic.go:55 +0x154
+panic({0x2dfd720, 0x4ad3de0})
+        /usr/local/go/src/runtime/panic.go:1047 +0x266
+github.com/hashicorp/terraform/internal/configs.NewModule({0xc0001b2a60, 0x2, 0x2}, {0x0, 0x0, 0xfcd587})
+        /home/circleci/project/project/internal/configs/module.go:115 +0x8d8
+github.com/hashicorp/terraform/internal/configs.(*Parser).LoadConfigDir(0xc0005a5870, {0x317e8cb, 0x10})
+        /home/circleci/project/project/internal/configs/parser_config_dir.go:42 +0x2b7
+github.com/hashicorp/terraform/internal/configs/configload.(*Loader).LoadConfig(0xc0006564b0, {0x317e8cb, 0xad})
+        /home/circleci/project/project/internal/configs/configload/loader_load.go:22 +0x33
+github.com/hashicorp/terraform/internal/command.(*Meta).loadConfig(0xc00002a660, {0xc000054580, 0xc00007c100})
+        /home/circleci/project/project/internal/command/meta_config.go:47 +0x98
+github.com/hashicorp/terraform/internal/command.(*ValidateCommand).validate(0xc00058da00, {0xc000054580, 0x0})
+        /home/circleci/project/project/internal/command/validate.go:67 +0x3d
+github.com/hashicorp/terraform/internal/command.(*ValidateCommand).Run(0xc00058da00, {0xc00007e3d0, 0x0, 0x0})
+        /home/circleci/project/project/internal/command/validate.go:52 +0x2a9
+github.com/mitchellh/cli.(*CLI).Run(0xc0000a9040)
+        /home/circleci/go/pkg/mod/github.com/mitchellh/cli@v1.1.2/cli.go:262 +0x5f8
+main.realMain()
+        /home/circleci/project/project/main.go:309 +0x1509
+main.main()
+        /home/circleci/project/project/main.go:58 +0x19
+PS D:\Cloud\Terraform\Kalyan\terraform_1.1.2_windows_amd64\Demo\hashicorp-certified-terraform-associate\03-Terraform-Fundamental-Blocks\03-02-Provider-Block\terraform-manifests> 
